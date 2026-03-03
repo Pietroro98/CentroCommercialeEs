@@ -9,14 +9,16 @@ public class Negozio {
     private List<Item> items = new ArrayList<>();
     private CentroCommerciale centroCommerciale;
 
+    private List<Lavoratore> lavoratori = new ArrayList<>();
+
     public Negozio(){}
 
-
-    public Negozio(String ragioneSociale, String partitaIva, List<Item> items, CentroCommerciale centroCommerciale) {
+    public Negozio(String ragioneSociale, String partitaIva, List<Item> items, CentroCommerciale centroCommerciale, List<Lavoratore> lavoratori) {
         this.ragioneSociale = ragioneSociale;
         this.partitaIva = partitaIva;
         this.items = items;
         this.centroCommerciale = centroCommerciale;
+        this.lavoratori = lavoratori;
     }
 
     public Negozio(String ragioneSociale, String partitaIva) {
@@ -64,11 +66,24 @@ public class Negozio {
      * @return
      */
     public boolean addToItems(Lavoratore lavoratore, Item item) {
-        return true;
+        if (lavoratore == null || item == null) {
+            return false;
+        }
+        if (lavoratore.getNegozio() != this) {
+            return false;
+        }
+        return lavoratore.handleItemAdd(item);
     }
 
     public boolean removeFromItems(Lavoratore lavoratore, Item item) {
-        return true;
+        if (lavoratore == null || item == null) {
+            return false;
+        }
+        if (lavoratore.getNegozio() != this) {
+            return false;
+        }
+
+        return lavoratore.handleItemRemove(item);
     }
 
     public String toString() {

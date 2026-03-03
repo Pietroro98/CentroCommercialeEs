@@ -6,6 +6,13 @@ public abstract class Lavoratore {
     private Negozio negozio;
 
     public Lavoratore(){}
+
+    public Lavoratore(String nome, String cognome, Negozio negozio) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.negozio = negozio;
+    }
+
     public Lavoratore(String nome, String cognome) {
         this.nome = nome;
         this.cognome = cognome;
