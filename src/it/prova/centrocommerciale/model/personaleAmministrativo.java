@@ -7,7 +7,7 @@ public class personaleAmministrativo extends Lavoratore{
 
     @Override
     boolean handleItemAdd(Item item) {
-        return true;
+        return true; 
     }
 
     @Override

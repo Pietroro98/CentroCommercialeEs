@@ -7,6 +7,17 @@ public class Negozio {
     private String ragioneSociale;
     private String partitaIva;
     private List<Item> items = new ArrayList<>();
+    private CentroCommerciale centroCommerciale;
+
+    public Negozio(){}
+
+
+    public Negozio(String ragioneSociale, String partitaIva, List<Item> items, CentroCommerciale centroCommerciale) {
+        this.ragioneSociale = ragioneSociale;
+        this.partitaIva = partitaIva;
+        this.items = items;
+        this.centroCommerciale = centroCommerciale;
+    }
 
     public Negozio(String ragioneSociale, String partitaIva) {
         this.ragioneSociale = ragioneSociale;
@@ -35,6 +46,29 @@ public class Negozio {
 
     public void setItems(List<Item> items) {
         this.items = items;
+    }
+
+    public CentroCommerciale getCentroCommerciale() {
+        return centroCommerciale;
+    }
+
+    public void setCentroCommerciale(CentroCommerciale centroCommerciale) {
+        this.centroCommerciale = centroCommerciale;
+    }
+
+    /**
+     * Aggiunge un item al negozio, controllando il ruolo del lavoratore,
+     *
+     * @param lavoratore
+     * @param item
+     * @return
+     */
+    public boolean addToItems(Lavoratore lavoratore, Item item) {
+        return true;
+    }
+
+    public boolean removeFromItems(Lavoratore lavoratore, Item item) {
+        return true;
     }
 
     public String toString() {

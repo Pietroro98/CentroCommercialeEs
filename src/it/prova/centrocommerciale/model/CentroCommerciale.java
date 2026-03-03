@@ -4,9 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CentroCommerciale {
-private String ragioneSociale;
-private String indirizzoPerEsteso;
-private List<Negozio> negozi = new ArrayList<>();
+    private String ragioneSociale;
+    private String indirizzoPerEsteso;
+    private List<Negozio> negozi = new ArrayList<>();
+
+    public CentroCommerciale(){}
+
+    public CentroCommerciale(String ragioneSociale, String indirizzoPerEsteso, List<Negozio> negozi) {
+        this.ragioneSociale = ragioneSociale;
+        this.indirizzoPerEsteso = indirizzoPerEsteso;
+        this.negozi = negozi;
+    }
 
     public CentroCommerciale(String ragioneSociale, String indirizzoPerEsteso) {
         this.ragioneSociale = ragioneSociale;

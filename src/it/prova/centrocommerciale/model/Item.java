@@ -4,6 +4,8 @@ public class Item {
     private String codice;
     private String descrizione;
     private float prezzo;
+    private Negozio negozio;
+    public Item(){}
 
     public Item(String codice, String descrizione, float prezzo) {
         this.codice = codice;
@@ -33,6 +35,14 @@ public class Item {
 
     public void setPrezzo(float prezzo) {
         this.prezzo = prezzo;
+    }
+
+    public Negozio getNegozio() {
+        return negozio;
+    }
+
+    public void setNegozio(Negozio negozio) {
+        this.negozio = negozio;
     }
 
     public String toString() {
