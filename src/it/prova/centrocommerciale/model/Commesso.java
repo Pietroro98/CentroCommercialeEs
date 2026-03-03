@@ -14,6 +14,7 @@ public class Commesso extends Lavoratore {
         if (this.getNegozio() == null) {
             return false;
         }
+        if( this.getNegozio().getItems().contains(item)) return false;
         this.getNegozio().getItems().add(item);
         return true;
     }
